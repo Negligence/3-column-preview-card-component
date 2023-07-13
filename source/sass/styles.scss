@@ -1,0 +1,179 @@
+@use 'functions' as *;
+@use "sass:math";
+@use "sass:map";
+@use "sass:list";
+
+/* #region Defaults */
+html {
+  box-sizing: border-box;
+  height: 100%;
+  background-color: var(--main-bg-color);
+  --sedan-bg-color: #{$sedan-bg-color};
+  --suv-bg-color: #{$suv-bg-color};
+  --luxury-bg-color: #{$luxury-bg-color};
+  --main-bg-color: #{$main-bg-color};
+  --main-color: #{$main-color};
+  --ff-head: #{$primary};
+  --ff-sub: #{$secondary};
+  --fw-bold: #{$bold};
+  --fw-reg: #{$regular};
+}
+
+*,*::before,*::after {
+  box-sizing: inherit;
+}
+
+:not(ul, ol, li) {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  gap: clamped(16px, 32px);
+  
+  main {
+    display: contents;
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font: {
+    family: var(--ff-head);
+    weight: var(--fw-bold);
+    size: rem(40px);
+  }
+  color: var(--main-color);
+}
+
+p, a {
+  font: {
+    family: var(--ff-sub);
+    weight: var(--fw-reg);
+    size: rem(15px);
+  }
+  color: var(--main-color);
+}
+
+figcaption, footer {
+  color: var(--tertiary-color);
+}
+
+a {
+  text-decoration: none;
+  background-color: var(--main-bg-color);
+}
+
+footer { 
+  font: {
+    family:var(--ff-sub);
+    size: rem(11px);
+  }
+  position: static;
+  inset: auto 0 1rem;
+  text-align: center; 
+  z-index: -1;
+  
+  > a {
+    font-size: rem(11px);
+    color: var(--luxury-bg-color);
+  }
+}
+/* #endregion Defaults */
+
+/* #region Mobile Styling */
+section,
+section > article {
+  display: grid;
+}
+
+section {
+  overflow: hidden;
+  border-radius: rem(8px);
+
+  > article {
+    width: rem(327px);
+    height: rem(442px);
+    padding: rem(48px);
+    gap: rem(32px);
+    place-items: start;
+
+    > p {
+      line-height: em(25px, 15px);
+    }
+
+    > a {
+      padding: rem(15px) rem(30px);
+      border-radius: 100vmax;
+    }
+  }
+  
+  > article:nth-of-type(1) {
+    background-color: var(--sedan-bg-color);
+    > a {
+      color: var(--sedan-bg-color);
+    }
+  }
+
+  > article:nth-of-type(2) {
+    background-color: var(--suv-bg-color);
+    > a {
+      color: var(--suv-bg-color);
+    }
+  }
+
+  > article:nth-of-type(3) {
+    background-color: var(--luxury-bg-color);
+    > a {
+      color: var(--luxury-bg-color);
+    }
+  } 
+}
+/* #endregion Mobile Styling */
+
+/* #region Desktop Styling */
+@media only screen and (min-width: 920px) {
+  body {
+    height: inherit;
+  }
+  
+  section {
+    grid-auto-flow: column;
+
+    > article {
+      width: rem(307px);
+      height: rem(501px);
+      grid-template-rows: repeat(3, auto) 1fr;
+
+      > a {
+        align-self: end;
+      }
+    }
+  }
+
+  footer {
+    position: fixed;
+  }
+}
+/* #endregion Desktop Styling */
+
+/* #region Active states */
+footer > a {
+  transition: color 250ms ease-in-out;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--sedan-bg-color);
+  }
+
+  &:focus,
+  &:active {
+    border-radius: rem(2px);
+    outline:currentColor solid 2px;
+  }
+
+}
+/* #endregion Active states */
