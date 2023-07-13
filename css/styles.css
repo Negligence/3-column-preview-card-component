@@ -71,45 +71,45 @@ footer > a {
 
 /* #endregion Defaults */
 /* #region Mobile Styling */
-section,
-section > article {
+div,
+div > article {
   display: grid;
 }
 
-section {
+div {
   overflow: hidden;
   border-radius: 0.5rem;
 }
-section > article {
+div > article {
   width: 20.4375rem;
   height: 27.625rem;
   padding: 3rem;
   gap: 2rem;
   place-items: start;
 }
-section > article > p {
+div > article > p {
   line-height: 1.6666666667em;
 }
-section > article > a {
+div > article > a {
   padding: 0.9375rem 1.875rem;
   border-radius: 100vmax;
 }
-section > article:nth-of-type(1) {
+div > article:nth-of-type(1) {
   background-color: var(--sedan-bg-color);
 }
-section > article:nth-of-type(1) > a {
+div > article:nth-of-type(1) > a {
   color: var(--sedan-bg-color);
 }
-section > article:nth-of-type(2) {
+div > article:nth-of-type(2) {
   background-color: var(--suv-bg-color);
 }
-section > article:nth-of-type(2) > a {
+div > article:nth-of-type(2) > a {
   color: var(--suv-bg-color);
 }
-section > article:nth-of-type(3) {
+div > article:nth-of-type(3) {
   background-color: var(--luxury-bg-color);
 }
-section > article:nth-of-type(3) > a {
+div > article:nth-of-type(3) > a {
   color: var(--luxury-bg-color);
 }
 
@@ -119,15 +119,15 @@ section > article:nth-of-type(3) > a {
   body {
     height: inherit;
   }
-  section {
+  div {
     grid-auto-flow: column;
   }
-  section > article {
+  div > article {
     width: 19.1875rem;
     height: 31.3125rem;
     grid-template-rows: repeat(3, auto) 1fr;
   }
-  section > article > a {
+  div > article > a {
     align-self: end;
   }
   footer {

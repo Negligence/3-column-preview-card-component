@@ -84,12 +84,12 @@ footer {
 /* #endregion Defaults */
 
 /* #region Mobile Styling */
-section,
-section > article {
+div,
+div > article {
   display: grid;
 }
 
-section {
+div {
   overflow: hidden;
   border-radius: rem(8px);
 
@@ -139,7 +139,7 @@ section {
     height: inherit;
   }
   
-  section {
+  div {
     grid-auto-flow: column;
 
     > article {
