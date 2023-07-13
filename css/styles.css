@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--ff-head);
   font-weight: var(--fw-bold);
   font-size: 2.5rem;
-  color: var(--main-color);
+  color: var(--main-bg-color);
 }
 
 p, a {
