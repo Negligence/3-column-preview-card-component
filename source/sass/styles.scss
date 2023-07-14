@@ -94,7 +94,8 @@ section {
   border-radius: rem(8px);
 
   > h1 {
-    display: none;
+    opacity: 0;
+    position: fixed;
   }
 
   > article {

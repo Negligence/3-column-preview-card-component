@@ -81,7 +81,8 @@ section {
   border-radius: 0.5rem;
 }
 section > h1 {
-  display: none;
+  opacity: 0;
+  position: fixed;
 }
 section > article {
   width: 20.4375rem;
