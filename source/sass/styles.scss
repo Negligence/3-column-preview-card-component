@@ -84,14 +84,18 @@ footer {
 /* #endregion Defaults */
 
 /* #region Mobile Styling */
-div,
-div > article {
+section,
+section > article {
   display: grid;
 }
 
-div {
+section {
   overflow: hidden;
   border-radius: rem(8px);
+
+  > h1 {
+    display: none;
+  }
 
   > article {
     width: rem(327px);
@@ -115,6 +119,12 @@ div {
     > a {
       color: var(--sedan-bg-color);
     }
+
+    > a:hover,
+    > a:focus,
+    > a:active {
+      background-color: var(--sedan-bg-color);
+    }
   }
 
   > article:nth-of-type(2) {
@@ -122,12 +132,24 @@ div {
     > a {
       color: var(--suv-bg-color);
     }
+
+    > a:hover,
+    > a:focus,
+    > a:active {
+      background-color: var(--suv-bg-color);
+    }
   }
 
   > article:nth-of-type(3) {
     background-color: var(--luxury-bg-color);
     > a {
       color: var(--luxury-bg-color);
+    }
+
+    > a:hover,
+    > a:focus,
+    > a:active {
+      background-color: var(--luxury-bg-color);
     }
   } 
 }
@@ -139,7 +161,7 @@ div {
     height: inherit;
   }
   
-  div {
+  section {
     grid-auto-flow: column;
 
     > article {
@@ -155,11 +177,28 @@ div {
 
   footer {
     position: fixed;
+    z-index: 1;
   }
 }
 /* #endregion Desktop Styling */
 
 /* #region Active states */
+section {
+  > article {
+    > a {
+      transition: 350ms;
+    }
+
+    > a:hover,
+    > a:focus,
+    > a:active {
+      outline: 2px solid var(--main-bg-color);
+      color: var(--main-bg-color);
+    }
+  }
+}
+
+
 footer > a {
   transition: color 250ms ease-in-out;
 

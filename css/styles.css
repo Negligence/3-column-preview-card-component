@@ -71,46 +71,64 @@ footer > a {
 
 /* #endregion Defaults */
 /* #region Mobile Styling */
-div,
-div > article {
+section,
+section > article {
   display: grid;
 }
 
-div {
+section {
   overflow: hidden;
   border-radius: 0.5rem;
 }
-div > article {
+section > h1 {
+  display: none;
+}
+section > article {
   width: 20.4375rem;
   height: 27.625rem;
   padding: 3rem;
   gap: 2rem;
   place-items: start;
 }
-div > article > p {
+section > article > p {
   line-height: 1.6666666667em;
 }
-div > article > a {
+section > article > a {
   padding: 0.9375rem 1.875rem;
   border-radius: 100vmax;
 }
-div > article:nth-of-type(1) {
+section > article:nth-of-type(1) {
   background-color: var(--sedan-bg-color);
 }
-div > article:nth-of-type(1) > a {
+section > article:nth-of-type(1) > a {
   color: var(--sedan-bg-color);
 }
-div > article:nth-of-type(2) {
+section > article:nth-of-type(1) > a:hover,
+section > article:nth-of-type(1) > a:focus,
+section > article:nth-of-type(1) > a:active {
+  background-color: var(--sedan-bg-color);
+}
+section > article:nth-of-type(2) {
   background-color: var(--suv-bg-color);
 }
-div > article:nth-of-type(2) > a {
+section > article:nth-of-type(2) > a {
   color: var(--suv-bg-color);
 }
-div > article:nth-of-type(3) {
+section > article:nth-of-type(2) > a:hover,
+section > article:nth-of-type(2) > a:focus,
+section > article:nth-of-type(2) > a:active {
+  background-color: var(--suv-bg-color);
+}
+section > article:nth-of-type(3) {
   background-color: var(--luxury-bg-color);
 }
-div > article:nth-of-type(3) > a {
+section > article:nth-of-type(3) > a {
   color: var(--luxury-bg-color);
+}
+section > article:nth-of-type(3) > a:hover,
+section > article:nth-of-type(3) > a:focus,
+section > article:nth-of-type(3) > a:active {
+  background-color: var(--luxury-bg-color);
 }
 
 /* #endregion Mobile Styling */
@@ -119,23 +137,34 @@ div > article:nth-of-type(3) > a {
   body {
     height: inherit;
   }
-  div {
+  section {
     grid-auto-flow: column;
   }
-  div > article {
+  section > article {
     width: 19.1875rem;
     height: 31.3125rem;
     grid-template-rows: repeat(3, auto) 1fr;
   }
-  div > article > a {
+  section > article > a {
     align-self: end;
   }
   footer {
     position: fixed;
+    z-index: 1;
   }
 }
 /* #endregion Desktop Styling */
 /* #region Active states */
+section > article > a {
+  transition: 350ms;
+}
+section > article > a:hover,
+section > article > a:focus,
+section > article > a:active {
+  outline: 2px solid var(--main-bg-color);
+  color: var(--main-bg-color);
+}
+
 footer > a {
   transition: color 250ms ease-in-out;
 }
