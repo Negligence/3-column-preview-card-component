@@ -47,10 +47,6 @@ p, a {
   color: var(--main-color);
 }
 
-figcaption, footer {
-  color: var(--tertiary-color);
-}
-
 a {
   text-decoration: none;
   background-color: var(--main-bg-color);
