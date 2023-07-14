@@ -3,4 +3,6 @@
 *.xd
 .DS_Store
 .prettierignore
+.gitignore
+package-lock.json
 /node_modules
