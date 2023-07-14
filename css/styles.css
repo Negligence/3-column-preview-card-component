@@ -151,7 +151,7 @@ section > article:nth-of-type(3) > a:active {
   }
   footer {
     position: fixed;
-    z-index: 1;
+    z-index: 10;
   }
 }
 /* #endregion Desktop Styling */
@@ -167,6 +167,7 @@ section > article > a:active {
 }
 
 footer > a {
+  text-decoration: underline;
   transition: color 250ms ease-in-out;
 }
 footer > a:hover, footer > a:focus, footer > a:active {
