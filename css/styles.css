@@ -135,7 +135,7 @@ section > article:nth-of-type(3) > a:active {
 
 /* #endregion Mobile Styling */
 /* #region Desktop Styling */
-@media only screen and (min-width: 920px) {
+@media only screen and (min-width: 57.5em) {
   body {
     height: inherit;
   }
@@ -163,7 +163,7 @@ section > article > a {
 section > article > a:hover,
 section > article > a:focus,
 section > article > a:active {
-  outline: 2px solid var(--main-bg-color);
+  outline: 0.125rem solid var(--main-bg-color);
   color: var(--main-bg-color);
 }
 
@@ -176,7 +176,7 @@ footer > a:hover, footer > a:focus, footer > a:active {
 }
 footer > a:focus, footer > a:active {
   border-radius: 0.125rem;
-  outline: currentColor solid 2px;
+  outline: currentColor solid 0.125rem;
 }
 
 /* #endregion Active states */
