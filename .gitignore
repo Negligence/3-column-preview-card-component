@@ -1,8 +1,0 @@
-*.sketch
-*.fig
-*.xd
-.gitignore
-.DS_Store
-.prettierignore
-package-lock.json
-/node_modules
